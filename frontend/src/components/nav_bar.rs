@@ -23,7 +23,7 @@ pub fn NavBar(props: &Props) -> Html {
         <div class="flex justify-between items-center w-auto min-[1920px]:w-[1888px] mx-0 min-[1920px]:mx-auto">
         <div class="flex gap-4 items-center" id="nav">
            if active_menu{
-            <button class="block md:block xl:hidden text-gray-400 py-3 px-2 hover:text-gray-200"
+            <button class="block xl:hidden text-gray-400 py-3 px-2 hover:text-gray-200"
                 id="nav-bar-btn-menu-draw">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
                     stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -34,8 +34,8 @@ pub fn NavBar(props: &Props) -> Html {
                 </svg>
             </button>
             }
-            <a class="flex md:flex gap-1 items-center text-white" id="nav-bar-logo-link" href="/">
-                <img class="xs:block" id="logo-img" width="50" src={logo.clone()}
+            <a class="flex gap-1 items-center text-white" id="nav-bar-logo-link" href="/">
+                <img class="block" id="logo-img" width="50" src={logo.clone()}
                     alt={name_web.clone()}/>
                 <p class="duration-300 hover:text-gray-400">{name_web}</p>
             </a>

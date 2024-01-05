@@ -15,6 +15,17 @@ use crate::{
     pages::navbar_menu::{MenuAbout, MenuAhu, MenuChiller, MenuLogin, MenuProfile},
 };
 
+#[derive(Debug, Clone, PartialEq)]
+pub enum ScreenBreak {
+    AllSize,
+    ExtraSmall,
+    Small,
+    Medium,
+    Large,
+    ExtraLarge,
+    Custom(AttrValue),
+}
+
 #[derive(Clone, Routable, PartialEq)]
 enum Route {
     #[at("/")]
@@ -39,7 +50,7 @@ fn switch(route: Route) -> Html {
     ];
     html! {
     <>
-    <NavBar name_web={"Eng TSM Z"} active_menu={false} logo={"https://avatars.githubusercontent.com/u/17867264?v=4"} menu={menu}/>
+    <NavBar name_web={"Eng TSM Z"} active_menu={true} logo={"https://avatars.githubusercontent.com/u/17867264?v=4"} menu={menu}/>
 
     {match route {
         Route::About => html! {
