@@ -8,3 +8,8 @@ address = "127.0.0.1"
 # address = "0.0.0.0"
 # The port to serve on.
 port = 8081
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["-c", "npx tailwindcss -i ./styles/tailwind.css -o ./dist/.stage/css/index.css"]
