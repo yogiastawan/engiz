@@ -1,15 +1,17 @@
-use yew::{function_component, html, Html, Properties, AttrValue};
+use yew::{function_component, html, AttrValue, Html, Properties};
+use yew_router::{components::Link, Routable};
 
 #[derive(Clone, PartialEq, Properties)]
-pub struct Props {
+pub struct Props<T: PartialEq + Clone + Routable + 'static> {
     pub logo: AttrValue,
     pub menu: Vec<Html>,
     pub name_web: String,
     pub active_menu: bool,
+    pub home_route: T,
 }
 
 #[function_component]
-pub fn NavBar(props: &Props) -> Html {
+pub fn NavBar<T: PartialEq + Clone + Routable + 'static>(props: &Props<T>) -> Html {
     let logo = props.logo.clone();
     let menu = props.menu.clone();
     let name_web = props.name_web.clone();
@@ -34,11 +36,11 @@ pub fn NavBar(props: &Props) -> Html {
                 </svg>
             </button>
             }
-            <a class="flex gap-1 items-center text-white" id="nav-bar-logo-link" href="/">
+            <Link<T> classes="flex gap-1 items-center text-white" to={props.home_route.clone()}>
                 <img class="block" id="logo-img" width="50" src={logo.clone()}
                     alt={name_web.clone()}/>
                 <p class="duration-300 hover:text-gray-400">{name_web}</p>
-            </a>
+            </Link<T>>
         </div>
         <div class="flex gap-4">
             {menu.into_iter().collect::<Html>()}

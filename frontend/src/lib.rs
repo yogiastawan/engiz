@@ -12,7 +12,7 @@ use yew_router::{
 
 use crate::{
     components::nav_bar::NavBar,
-    pages::navbar_menu::{MenuAbout, MenuAhu, MenuChiller, MenuLogin, MenuProfile},
+    pages::navbar_menu::{MenuAbout, MenuAhu, MenuChiller, MenuLogin, MenuProfile, MenuHelp},
 };
 
 #[derive(Debug, Clone, PartialEq)]
@@ -36,6 +36,8 @@ enum Route {
     Profile { id: usize },
     #[at("/about")]
     About,
+    #[at("/help")]
+    Help,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -47,10 +49,11 @@ fn switch(route: Route) -> Html {
         html! {<MenuChiller/>},
         html! {<MenuProfile/>},
         html! {<MenuAbout/>},
+        html! {<MenuHelp/>},
     ];
     html! {
     <>
-    <NavBar name_web={"Eng TSM Z"} active_menu={true} logo={"https://avatars.githubusercontent.com/u/17867264?v=4"} menu={menu}/>
+    <NavBar<Route> home_route={Route::Index} name_web={"Eng TSM Z"} active_menu={true} logo={"https://avatars.githubusercontent.com/u/17867264?v=4"} menu={menu}/>
 
     {match route {
         Route::About => html! {
@@ -85,6 +88,13 @@ fn switch(route: Route) -> Html {
                 <Link<Route> to={Route::Login} >{"Go to Login"}</Link<Route>>
                 <Link<Route> to={Route::About} >{"Go to about"}</Link<Route>>
             </>
+        },
+        Route::Help=>html!{
+            <>
+            <div>{"Help"}</div>
+            <Link<Route> to={Route::Login} >{"Go to Login"}</Link<Route>>
+            <Link<Route> to={Route::About} >{"Go to about"}</Link<Route>>
+        </>
         },
     }}
     </>

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 /*
 ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com
 */
@@ -446,7 +444,7 @@ video {
   display: none;
 }
 
-*, ::before, ::after{
+*, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -496,7 +494,7 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-::backdrop{
+::backdrop {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
@@ -546,196 +544,206 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.fixed{
+.static {
+  position: static;
+}
+
+.fixed {
   position: fixed;
 }
 
-.left-0{
+.left-0 {
   left: 0px;
 }
 
-.right-0{
+.right-0 {
   right: 0px;
 }
 
-.top-0{
+.top-0 {
   top: 0px;
 }
 
-.z-\[1\]{
+.z-\[1\] {
   z-index: 1;
 }
 
-.mx-0{
+.mx-0 {
   margin-left: 0px;
   margin-right: 0px;
 }
 
-.block{
+.block {
   display: block;
 }
 
-.inline{
+.inline {
   display: inline;
 }
 
-.flex{
+.flex {
   display: flex;
 }
 
-.hidden{
+.hidden {
   display: none;
 }
 
-.w-auto{
+.w-auto {
   width: auto;
 }
 
-.items-center{
+.items-center {
   align-items: center;
 }
 
-.justify-between{
+.justify-between {
   justify-content: space-between;
 }
 
-.gap-1{
+.gap-1 {
   gap: 0.25rem;
 }
 
-.gap-4{
+.gap-4 {
   gap: 1rem;
 }
 
-.bg-slate-800{
+.bg-slate-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.px-2{
+.px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
-.px-4{
+.px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.py-3{
+.py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
 
-.font-semibold{
+.font-semibold {
   font-weight: 600;
 }
 
-.text-gray-400{
+.text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.text-white{
+.text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.transition-all{
+.transition-all {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.duration-300{
+.duration-300 {
   transition-duration: 300ms;
-}
-
-html {
-  font-family: 'Poppins', sans-serif;
 }
 
 body {
   background-color: #202142;
 }
 
-.hover\:text-gray-200:hover{
+.hover\:text-gray-200:hover {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
-.hover\:text-gray-400:hover{
+.hover\:text-gray-400:hover {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-@media (min-width: 320px){
-  .xs\:inline{
+@media (min-width: 320px) {
+  .xs\:inline {
     display: inline;
   }
 
-  .xs\:flex{
+  .xs\:flex {
     display: flex;
   }
 }
 
-@media (min-width: 480px){
-  .sm\:inline{
+@media (min-width: 480px) {
+  .sm\:inline {
     display: inline;
   }
 
-  .sm\:flex{
+  .sm\:flex {
     display: flex;
   }
 }
 
-@media (min-width: 624px){
-  .min-\[624px\]\:inline{
-    display: inline;
-  }
-}
-
-@media (min-width: 768px){
-  .md\:inline{
+@media (min-width: 624px) {
+  .min-\[624px\]\:inline {
     display: inline;
   }
 
-  .md\:flex{
+  .min-\[624px\]\:flex {
     display: flex;
   }
 }
 
-@media (min-width: 976px){
-  .lg\:inline{
+@media (min-width: 768px) {
+  .md\:inline {
     display: inline;
   }
 
-  .lg\:flex{
+  .md\:flex {
     display: flex;
   }
 }
 
-@media (min-width: 1440px){
-  .xl\:inline{
+@media (min-width: 880px) {
+  .min-\[880px\]\:inline {
+    display: inline;
+  }
+}
+
+@media (min-width: 976px) {
+  .lg\:inline {
     display: inline;
   }
 
-  .xl\:flex{
+  .lg\:flex {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .xl\:inline {
+    display: inline;
+  }
+
+  .xl\:flex {
     display: flex;
   }
 
-  .xl\:hidden{
+  .xl\:hidden {
     display: none;
   }
 }
 
-@media (min-width: 1920px){
-  .min-\[1920px\]\:mx-auto{
+@media (min-width: 1920px) {
+  .min-\[1920px\]\:mx-auto {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .min-\[1920px\]\:w-\[1888px\]{
+  .min-\[1920px\]\:w-\[1888px\] {
     width: 1888px;
   }
 }
