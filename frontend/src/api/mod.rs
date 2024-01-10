@@ -1,20 +1,13 @@
-use common::{ApiResponse, BASE_URL, ApiAboutRespons};
+use common::BASE_URL;
+use reqwest::{Error, Response};
 
-pub async fn get_api(
-    url: &str,
-    is_relative: bool,
-) -> Result<ApiResponse<ApiAboutRespons>, String> {
-    let url = match is_relative {
-        true => BASE_URL.to_owned() + "/capi/about",
-        false => url.to_string(),
+pub async fn get_api(url: &str, api_path: &str) -> Result<Response, Error> {
+    let url = if url.chars().nth(0) == Some('/') {
+        BASE_URL.to_owned() + api_path + url
+    } else {
+        url.to_string()
     };
-    let resp = reqwest::get(url).await;
-    let resp = match resp {
-        Ok(x) => x,
-        Err(err) => {
-            return Err(err.to_string());
-        }
-    };
-    let data = resp.json::<ApiResponse<ApiAboutRespons>>().await.unwrap();
-    Ok(data)
+    let resp = reqwest::get(&url).await;
+
+    resp
 }

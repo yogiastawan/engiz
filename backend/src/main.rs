@@ -8,6 +8,7 @@ use frontend::{ServerApp, ServerAppProps};
 use yew::ServerRenderer;
 
 const VESRION: &str = env!("CARGO_PKG_VERSION");
+const NAME: &str = "TSM ENG Z";
 
 fn server_app_props(url: String) -> Box<dyn FnOnce() -> ServerAppProps + Send> {
     Box::new(move || ServerAppProps { url: url.into() })
@@ -22,7 +23,7 @@ async fn yew_app_render(req: HttpRequest) -> Result<HttpResponse, Error> {
         .await;
     Ok(HttpResponse::Ok()
         .content_type("text/html;charset=utf-8")
-        .body(index_html.replace("<body>", &format!("<body>{}", content))))
+        .body(index_html.replace("<body>", &format!("<body>{}", &content))))
 }
 
 // provide data for about content
